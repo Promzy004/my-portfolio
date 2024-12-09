@@ -1,0 +1,495 @@
+* {
+    margin: 0px !important;
+}
+
+body{
+    font-family: "Poppins", serif;
+}
+
+p{
+    color: #777;
+}
+
+.toggler{
+    display: none;
+    flex-direction: column;
+}
+
+
+header {
+    width: 100%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    font-weight: 550;
+    z-index: 2;
+    padding: 1.5vw 5vw;
+}
+
+
+.name-container a {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.name-container img{
+    border-radius: 50%;
+    width: 50px;
+}
+
+.links {
+    display: flex;
+    gap: 5vw;
+    margin: 0 70px;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+header a{
+    text-decoration: none !important;
+    color: #000 !important;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: rgba(0, 98, 185, 0.8) !important;
+}
+
+.link-border{
+    width: 100%;
+    margin-top: 2px;
+    height: 3px;
+    background: red;
+    transform-origin: 50% 50%;
+    animation: navlinks-border 1s ease-in  1 forwards;
+    position: relative;
+    display: none;
+}
+
+
+
+
+/*                                                   HERO SECTION            */
+
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)) center center, url(images/asset8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero a{
+    text-decoration: none !important;
+    color: black;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+}
+
+.social-media > a{
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+    padding: 10px;
+}
+
+.social-media > a:nth-child(1) {
+    border-top: 2px solid #fff;
+}
+
+.social-media > a:hover{
+    background-color: rgba(119, 160, 196, 0.8);
+}
+
+.social-media i{
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.content{
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    text-align: center;
+}
+
+.content > h2{
+    font-size: 3em;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.content > p{
+    font-size: 1.18em;
+    color: #e3e4f2;
+    font-weight: 550;
+}
+
+.content > button {
+    width: 13em;
+    height: 3.5em;
+    font-size: 100%;
+    font-weight: 550;
+    letter-spacing: 0.1em;
+    border-radius: 0.5em;
+    color: #fff;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.content > button > a{
+    font-weight: bold;
+}
+
+.animated-ball {
+    width: 1.7em;
+    height: 3em;
+    position: absolute;
+    bottom: 25px;
+    border-radius: 1.5em;
+    border: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.animated-ball > i {
+    font-size: 2em;
+    opacity: 1;
+    display: inline-block;
+    color: #fff;
+    animation: animate-ball 1.5s linear   infinite;
+    transform: translateY(-15px);
+}
+
+
+/*                                                          PROJECT DETAILS         */
+
+
+.img-container > img {
+    width: 100%;
+}
+
+.lang-container{
+    font-size: small;
+    padding: 7px 15px;
+    border-radius: 3px;
+    background-color:  rgba(153, 153, 153, 0.2);
+}
+
+
+/*                                                          FOOTER SECTION          */
+
+
+footer{
+    padding: 0px 55px;
+    background-color: rgb(16, 16, 16);
+}
+
+footer h5{
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+footer p {
+    color: #e3e4f2;
+}
+
+footer .name-social {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 0px;
+}
+
+footer .name-social > div {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+footer .name-social > div:nth-child(1) {
+    width: 40vw;
+}
+
+footer .name-social > div:nth-child(2) > div {
+    display: flex;
+    gap: 15px;
+}
+
+footer .name-social > div:nth-child(2) > div i {
+    color: #fff;
+    font-size: 20px;
+}
+
+footer hr{
+    width: 100%;
+    color: rgb(159, 159, 159);
+}
+
+footer .copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .copyright > p{
+    padding: 35px 0px;
+    font-size: 12px;
+}
+
+footer .copyright > p > span {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+@keyframes navlinks-border {
+    0% {
+        width: 0;
+        left: 50%;
+      }
+      
+    50% {
+    width: 100%;
+    left: 0;
+    }
+}
+
+@media screen and (max-width: 1190px) {
+
+    /*                                                      HEADER SECTION              */
+    
+    .name-container a {
+        font-size: 15px;
+    }
+    
+    .name-container img{
+        border-radius: 50%;
+        width: 45px;
+    }
+
+    .links{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 890px) {
+
+    header{
+        padding: 2vw 4vw;
+    }
+
+    .name-container a {
+        font-size: 14px;
+        gap: 1.3vw;
+    }
+
+    .name-container img{
+        border-radius: 50%;
+        width: 40px;
+    }
+
+    .links{
+        font-size: 14px;
+        gap: 3vw;
+    }
+
+
+/*                                              HERO SECTION       */
+    .content{
+        gap: 2em;
+    }
+
+    .content > h2{
+        font-size: 2.5em;
+    }
+    
+    .content > p{
+        font-size: 1em;
+    }
+
+    .content > button {
+        width: 10em;
+        height: 3em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .headings{
+        width: 100%;
+    }
+
+    .content{
+        max-width: 85%;
+        padding-top: 8vw;
+    }
+
+    .content > h2{
+        font-size: 2.5em;
+        color: #fff;
+        letter-spacing: 2px;
+    }
+    
+    .content > p{
+        font-size: 1em;
+        color: #fff;
+        font-weight: 550;
+    }
+
+    .content > button {
+        width: 10em;
+        height: 3em;
+    }
+
+    .social-media {
+        display: none;
+    }
+
+    .animated-ball {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 610px) {
+
+    header{
+        padding: 15px 6vw;
+    }
+
+    .links{
+        background-color: white;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        padding-bottom: 1.5em;
+        gap: 1.5em;
+        transform-origin: top;
+        animation: links-show 0.5s linear both;
+    }
+
+    .links a{
+        border-top: 1px solid rgb(180, 180, 180);
+        padding-top: 1.5em;
+    }
+
+    .name-container a {
+        display: flex;
+        align-items: center;
+        gap: 1.5vw;
+    }
+
+    .link-border{
+        display: none;
+    }
+
+    .show{
+        display: flex;
+    }
+
+    .toggler{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .toggler div {
+        width: 24px ;
+        height: 2px ;
+        background: #000;
+        z-index: 3;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .new-toggler div:nth-child(1) {
+        transform-origin: 90% 45%;
+        transform: rotateZ(-45deg);
+    }
+
+    .new-toggler div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .new-toggler div:nth-child(3) {
+        transform-origin: 90% 45%;
+        transform: rotateZ(45deg);
+    }
+
+
+/*                                          HERO SECTION        */
+
+
+    .hero{
+        height: 90vh;
+    }
+
+    .content{
+        max-width: 90%;
+        padding-top: 8vw;
+    }
+
+    .content > h2{
+        font-size: 2em;
+        color: #fff;
+        letter-spacing: 2px;
+    }
+    
+    .content > p{
+        font-size: 0.7em;
+        color: #fff;
+        font-weight: 550;
+    }
+
+    .content > button {
+        width: 10em;
+        height: 3em;
+    }
+
+
+    /*                              FOOTER SECTION          */
+
+    footer .name-social {
+        flex-direction: column;
+        gap: 40px;
+        padding: 50px 0px;
+    }
+
+    footer{
+        padding: 0px 40px;
+    }
+
+    footer .name-social > div:nth-child(1) {
+        width: 70vw;
+    }
+}
+
+@keyframes links-show{
+    from{transform: scaleY(0);}
+    to{transform: scaleY(1);}
+}
+
+
+
+
