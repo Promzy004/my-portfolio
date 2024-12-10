@@ -240,7 +240,11 @@ header a{
 .range-container{
     width: 100%;
     height: 15px;
-    background: red;
+    background: rgb(197, 197, 197);
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
 }
 
 .all-btn {
@@ -275,8 +279,8 @@ header a{
     font-size: 12px;
     color: #fff;
     text-align: end;
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
     padding-right: 7px;
 }
 
@@ -291,27 +295,27 @@ header a{
 
 .skills:nth-child(1) > .range-container:nth-child(2) > div{
     width: 90%;
-    background: blue;
+    background: #dd4b24;
 }
 
 .skills:nth-child(2) > .range-container:nth-child(2) > div{
     width: 80%;
-    background: blue;
+    background: #254ade;
 }
 
 .skills:nth-child(3) > .range-container:nth-child(2) > div{
     width: 70%;
-    background: blue;
+    background: #e3c430;
 }
 
 .skills:nth-child(4) > .range-container:nth-child(2) > div{
     width: 75%;
-    background: blue;
+    background: #6c12ed;
 }
 
 .skills:nth-child(5) > .range-container:nth-child(2) > div{
     width: 60%;
-    background: blue;
+    background: #5ed4f3;
 }
 
 
@@ -616,6 +620,7 @@ footer .copyright > p > span {
         padding-bottom: 1.5em;
         gap: 1.5em;
         transform-origin: top;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px;
         animation: links-show 0.5s linear both;
     }
 
