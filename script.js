@@ -3,9 +3,9 @@ const linkBorder = document.querySelectorAll('.link-border');
 const toggler = document.querySelector('.toggler');
 const links = document.querySelector('.links');
 const skill_ranges = document.querySelectorAll('.range');
-const project_alert_trigger = document.querySelector('.project-header');
-const project_alert = document.getElementById('project-alert')
-const cancel_alert = document.querySelector('.project-alert-cancel')
+const contact_alert_trigger = document.querySelector('.contact-header');
+const contact_alert = document.getElementById('contact-alert')
+const cancel_alert = document.querySelector('.contact-alert-cancel')
 
 const pageId = document.body.className;
 
@@ -35,7 +35,7 @@ navlinks.forEach((navlink, index) => {
             linkBorder.forEach(border => (border.style.display = 'none')); // Hide all borders
             linkBorder[index].style.display = 'flex'; // Show only the clicked border
         });
-        html.addEventListener('scroll', () => {
+        html.addEventListener('wheel', () => {
             navlinks.forEach(link => link.classList.remove('active'));
             linkBorder.forEach(border => (border.style.display = 'none'));
         })
@@ -92,24 +92,25 @@ if (pageId == 'home') {
         })
         
         
-        //                              observes the project section so as to send an alert pop up
+        //                              observes the contact section so as to send an alert pop up
         
         
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    project_alert.style.display = 'flex';
+                    contact_alert.style.display = 'flex';
                 }
             })
         })
-        observer.observe(project_alert_trigger)
+        observer.observe(contact_alert_trigger)
         
         
         
         //                              cancels the alert pop up when clicked
         
         cancel_alert.addEventListener('click', (e) => {
-            project_alert.style.display = 'none'
+            contact_alert.style.display = 'none'
+            observer.disconnect();
         })
         
         cancel_alert.addEventListener('mouseover', () => {
