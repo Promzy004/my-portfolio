@@ -7,46 +7,9 @@ const project_alert_trigger = document.querySelector('.project-header');
 const project_alert = document.getElementById('project-alert')
 const cancel_alert = document.querySelector('.project-alert-cancel')
 
-//                           observes the skills section so as to animate the range when the section is in view
+const pageId = document.body.className;
 
-
-const skill_observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate')
-        }
-    })
-})
-
-skill_ranges.forEach(range => {
-    skill_observer.observe(range)
-})
-
-
-//                              observes the project section so as to send an alert pop up
-
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            project_alert.style.display = 'flex';
-        }
-    })
-})
-observer.observe(project_alert_trigger)
-
-
-//                              cancels the alert pop up when clicked
-
-cancel_alert.addEventListener('click', (e) => {
-    project_alert.style.display = 'none'
-})
-
-cancel_alert.addEventListener('mouseover', () => {
-    cancel_alert.style.cursor = 'pointer'
-})
-
-
+//  1.                                javascript for all pages with similar javascript
 
 //                                  hamburger toggler that display nav links when clicked
 
@@ -55,7 +18,6 @@ toggler.addEventListener('click', function(e) {
         toggler.classList.toggle('new-toggler')
         links.classList.toggle('show')
 })
-
 
 //                                   Effects that take place on nav links when been clicked
 
@@ -87,6 +49,9 @@ navlinks.forEach((navlink, index) => {
 
 });
 
+
+//                                  Button that scrolls to top when clicked
+
 const scroll_to_top = document.getElementById('scroll-to-top');
 
 window.addEventListener('scroll', (e) => {
@@ -106,18 +71,67 @@ scroll_to_top.addEventListener('click', (e) => {
 
 
 
+//  2.                                     javacript for home page only
 
 
-// function sendMail() {
-    
-//     var params = {
-//         from_name: document.getElementById('fullName').valu,
-//         email_id: document.getElementById('email_id').value,
-//         message: document.getElementById('message').value
-//     }
-//     emailjs.send('service_0v1d41j', 'template_q1os906', params).then(function (res) {
-//         alert('message sent')
-//     })
-// }
+if (pageId == 'home') {
 
+  //                           observes the skills section so as to animate the range when the section is in view
+        
+        
+        const skill_observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate')
+                }
+            })
+        })
+        
+        skill_ranges.forEach(range => {
+            skill_observer.observe(range)
+        })
+        
+        
+        //                              observes the project section so as to send an alert pop up
+        
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    project_alert.style.display = 'flex';
+                }
+            })
+        })
+        observer.observe(project_alert_trigger)
+        
+        
+        
+        //                              cancels the alert pop up when clicked
+        
+        cancel_alert.addEventListener('click', (e) => {
+            project_alert.style.display = 'none'
+        })
+        
+        cancel_alert.addEventListener('mouseover', () => {
+            cancel_alert.style.cursor = 'pointer'
+        })
+        
+        
+        
+       // function sendMail() {
+            
+        //     var params = {
+        //         from_name: document.getElementById('fullName').valu,
+        //         email_id: document.getElementById('email_id').value,
+        //         message: document.getElementById('message').value
+        //     }
+        //     emailjs.send('service_0v1d41j', 'template_q1os906', params).then(function (res) {
+        //         alert('message sent')
+        //     })
+        // }
+        
+        
+
+
+}    
 

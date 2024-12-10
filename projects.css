@@ -2,6 +2,29 @@
     margin: 0px !important;
 }
 
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    /* border-radius: 50%; */
+    width: 50px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+.active {
+    color: rgba(0, 98, 185, 0.8) !important; /* Example styling for the active link */
+}
+
 body{
     font-family: "Poppins", serif;
 }
@@ -15,7 +38,6 @@ p{
     flex-direction: column;
 }
 
-
 header {
     width: 100%;
     background-color: white;
@@ -25,7 +47,7 @@ header {
     align-items: center;
     position: fixed;
     font-weight: 550;
-    z-index: 2;
+    z-index: 99;
     padding: 1.5vw 5vw;
 }
 
@@ -293,6 +315,13 @@ footer .copyright > p > span {
 
 @media screen and (max-width: 890px) {
 
+
+    #scroll-to-top{
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+    
     header{
         padding: 2vw 4vw;
     }
@@ -371,6 +400,13 @@ footer .copyright > p > span {
 
 @media screen and (max-width: 610px) {
 
+
+    #scroll-to-top{
+        width: 28px;
+        height: 28px;
+        font-size: 15px;
+    }
+
     header{
         padding: 15px 6vw;
     }
@@ -412,6 +448,7 @@ footer .copyright > p > span {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        cursor: pointer;
     }
     
     .toggler div {

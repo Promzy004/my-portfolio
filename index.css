@@ -19,9 +19,6 @@
     cursor: pointer;
     z-index: 1000;
 }
-/* #scroll-to-top:hover {
-    background-color: #0056b3;
-} */
 
 
 .active {
@@ -284,7 +281,7 @@ header a{
 }
 
 .animate{
-    animation: skills 1.5s ease-in  forwards;
+    animation: skills 1s ease-in  forwards;
 }
 
 @keyframes skills {
@@ -647,6 +644,7 @@ footer .copyright > p > span {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        cursor: pointer;
     }
     
     .toggler div {
