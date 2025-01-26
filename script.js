@@ -95,44 +95,47 @@ if (pageId == 'home') {
         //                              observes the contact section so as to send an alert pop up
         
         
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    contact_alert.style.display = 'flex';
-                }
-            })
-        })
-        observer.observe(contact_alert_trigger)
+        // const observer = new IntersectionObserver(entries => {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) {
+        //             contact_alert.style.display = 'flex';
+        //         }
+        //     })
+        // })
+        // observer.observe(contact_alert_trigger)
         
         
         
         //                              cancels the alert pop up when clicked
         
-        cancel_alert.addEventListener('click', (e) => {
-            contact_alert.style.display = 'none'
-            observer.disconnect();
-        })
+        // cancel_alert.addEventListener('click', (e) => {
+        //     contact_alert.style.display = 'none'
+        //     observer.disconnect();
+        // })
         
-        cancel_alert.addEventListener('mouseover', () => {
-            cancel_alert.style.cursor = 'pointer'
-        })
-        
-        
-        
-       // function sendMail() {
-            
-        //     var params = {
-        //         from_name: document.getElementById('fullName').valu,
-        //         email_id: document.getElementById('email_id').value,
-        //         message: document.getElementById('message').value
-        //     }
-        //     emailjs.send('service_0v1d41j', 'template_q1os906', params).then(function (res) {
-        //         alert('message sent')
-        //     })
-        // }
-        
-        
-
+        // cancel_alert.addEventListener('mouseover', () => {
+        //     cancel_alert.style.cursor = 'pointer'
+        // })
 
 }    
+
+
+window.onload = function() {
+    const notification = document.getElementById('notification')
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // these IDs from the previous steps
+        emailjs.sendForm('service_0v1d41j', 'template_q1os906', this)
+            .then(() => {
+                notification.style.display = 'block'
+                setTimeout(() => {
+                    notification.style.display = 'none'
+                },2000)
+                this.reset();
+            }, (error) => {
+                console.log('FAILED...', error);
+            });
+
+    });
+}
 

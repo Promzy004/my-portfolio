@@ -11,14 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function(){
-            emailjs.init("4ZAMQs9ca1Zd-1czB");
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "4ZAMQs9ca1Zd-1czB",
+            });
         })();
-    </script> -->
+    </script>
 </head>
 <body class="home">
     <div class="Container">
@@ -140,7 +141,7 @@
                                     </div>
                                 </div>
                                 <div class="skills">
-                                    <p>BOOTSTRAP</p>
+                                    <p>TailwindCSS</p>
                                     <div class="range-container">
                                         <div class="range">75%</div>
                                     </div>
@@ -236,23 +237,24 @@
 
                 <div class="form-area col-12 d-flex justify-content-center mb-5 px-3">
                     <div class="bg-light p-md-5 py-4 px-3 rounded-2">
-                        <form action="" class="d-flex flex-column gap-md-5 gap-3">
+                        <form action="" id="contact-form" class="d-flex flex-column gap-md-5 gap-3">
+                            <div id="notification">Message sent</div>
                             <div class="d-flex flex-column gap-2">
                                 <label class="form-label" for="fullName">Name</label>
-                                <input type="text" class="form-control p-3" id="fullName" placeholder="Enter Your Full Name" required>
+                                <input type="text" name="from_name" class="form-control p-3" id="fullName" placeholder="Enter Your Full Name" required>
                             </div>
 
                             <div class="d-flex flex-column gap-2">
                                 <label class="form-label" for="email_id">E-mail</label>
-                                <input type="text" class="form-control p-3" id="email_id" placeholder="Enter Your Email" required>
+                                <input type="text" name="email_id" class="form-control p-3" id="email_id" placeholder="Enter Your Email" required>
                             </div>
                             
                             <div class="d-flex flex-column gap-2">
                                 <label class="form-label" for="message">Message</label>
-                                <textarea name="message" id="message" class="form-control p-3" rows="10" id="message" placeholder="Enter Your Message" required></textarea>
+                                <textarea name="message" id="message" class="form-control p-3" rows="10" placeholder="Enter Your Message" required></textarea>
                             </div>
                             <div class="d-flex flex-row justify-content-end">
-                                <input type="submit" onclick="sendMail()" value="Send Message" class="btn btn-primary px-3 py-2">
+                                <input type="submit" name="user_name" value="Send Message" class="btn btn-primary px-3 py-2">
                             </div>
                         </form>
                     </div>

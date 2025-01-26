@@ -401,6 +401,22 @@ header a{
     opacity: 0.5;
 }
 
+#contact-form{
+    position: relative;
+}
+
+.contact-page #notification{
+    background-color: rgb(77, 179, 77);
+    padding: 5px 0px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    align-self: center;
+    bottom: 60px;
+    color: #303230;
+}
 
 /*                                                          FOOTER SECTION          */
 
