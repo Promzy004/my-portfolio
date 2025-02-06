@@ -477,9 +477,13 @@ footer .copyright > p{
     font-size: 12px;
 }
 
-footer .copyright > p > span {
+footer .copyright > p > a {
     color: #fff;
-    text-decoration: underline;
+    text-decoration: underline !important;
+}
+
+footer .copyright > p > a:hover{
+    color: #0062b9;
 }
 
 
