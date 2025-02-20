@@ -198,7 +198,7 @@ header a{
     opacity: 1;
     display: inline-block;
     color: #fff;
-    animation: animate-ball 1.5s linear   infinite;
+    animation: animate-ball 1.5s linear infinite;
     transform: translateY(-15px);
 }
 
