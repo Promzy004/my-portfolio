@@ -6,8 +6,11 @@ const skill_ranges = document.querySelectorAll('.range');
 const contact_alert_trigger = document.querySelector('.contact-header');
 const contact_alert = document.getElementById('contact-alert')
 const cancel_alert = document.querySelector('.contact-alert-cancel')
+const pages = document.querySelectorAll('.page');
 
 const pageId = document.body.className;
+
+//========================================================================================================================================
 
 //  1.                                javascript for all pages with similar javascript
 
@@ -18,6 +21,8 @@ toggler.addEventListener('click', function(e) {
         toggler.classList.toggle('new-toggler')
         links.classList.toggle('show')
 })
+
+//============================================================================================================
 
 //                                   Effects that take place on nav links when been clicked
 
@@ -35,26 +40,27 @@ navlinks.forEach((navlink, index) => {
             linkBorder.forEach(border => (border.style.display = 'none')); // Hide all borders
             linkBorder[index].style.display = 'flex'; // Show only the clicked border
         });
-        html.addEventListener('wheel', () => {
-            navlinks.forEach(link => link.classList.remove('active'));
-            linkBorder.forEach(border => (border.style.display = 'none'));
-        })
+        // html.addEventListener('wheel', () => {
+        //     navlinks.forEach(link => link.classList.remove('active'));
+        //     linkBorder.forEach(border => (border.style.display = 'none'));
+        // })
     } else {
         navlink.addEventListener('click', (e) => {
             toggler.classList.remove('new-toggler')
             links.classList.remove('show')
         });
     }
-
-
 });
+
+
+//============================================================================================================
 
 
 //                                  Button that scrolls to top when clicked
 
 const scroll_to_top = document.getElementById('scroll-to-top');
 
-window.addEventListener('scroll', (e) => {
+window.addEventListener('scroll', () => {
     if (window.scrollY > 130) {
         scroll_to_top.style.display = 'block'
     } else {
@@ -62,12 +68,15 @@ window.addEventListener('scroll', (e) => {
     }
 })
 
-scroll_to_top.addEventListener('click', (e) => {
+scroll_to_top.addEventListener('click', () => {
     scroll_to_top.style.backgroundColor = 'red;'
     window.scrollTo({
         top: 0
     })
 })
+
+
+//============================================================================================================================================
 
 
 
@@ -90,6 +99,37 @@ if (pageId == 'home') {
         skill_ranges.forEach(range => {
             skill_observer.observe(range)
         })
+
+//============================================================================================================
+
+        //observes the pages section so as to animate and make the navbar links active when the page section is in view
+        const page_observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting){
+                    let index = pagesArray.indexOf(entry.target);
+
+                    // Remove "active" class from all nav links
+                    navlinks.forEach(link => link.classList.remove('active'));
+
+                    // Add "active" class to the clicked nav link
+                    navlinks[index].classList.add('active');
+
+                    // Update the corresponding linkBorder
+                    linkBorder.forEach(border => (border.style.display = 'none')); // Hide all borders
+                    linkBorder[index].style.display = 'flex'; // Show only the clicked border
+                }
+            })
+        }, {
+            threshold: 0.1
+        })
+
+        //convert the nodelist to an array so as to use the indexOf array funtion to capture the page id
+        const pagesArray = Array.from(pages)
+
+        pagesArray.forEach((pageArray) => {
+            page_observer.observe(pageArray);
+        })
+
         
         
         //                              observes the contact section so as to send an alert pop up
@@ -120,6 +160,9 @@ if (pageId == 'home') {
 }    
 
 
+//============================================================================================================
+
+
 window.onload = function() {
     const notification = document.getElementById('notification')
     document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -138,4 +181,5 @@ window.onload = function() {
 
     });
 }
+
 
