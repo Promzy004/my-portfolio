@@ -105,7 +105,7 @@ if (pageId == 'home') {
         //observes the pages section so as to animate and make the navbar links active when the page section is in view
         const page_observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                if(entry.isIntersecting){
+                if(entry.isIntersecting && window.innerWidth > 610){
                     let index = pagesArray.indexOf(entry.target);
 
                     // Remove "active" class from all nav links
@@ -178,7 +178,6 @@ window.onload = function() {
             }, (error) => {
                 console.log('FAILED...', error);
             });
-
     });
 }
 
