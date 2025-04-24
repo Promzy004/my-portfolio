@@ -8,6 +8,8 @@ const contact_alert = document.getElementById('contact-alert')
 const cancel_alert = document.querySelector('.contact-alert-cancel')
 const pages = document.querySelectorAll('.page');
 
+console.log(pages)
+
 const pageId = document.body.className;
 
 //========================================================================================================================================
@@ -180,5 +182,49 @@ window.onload = function() {
             });
     });
 }
+
+
+// Scroll animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if an element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+            rect.bottom >= 0
+        );
+    }
+
+    // Get all elements that need animations
+    const animatedSections = document.querySelectorAll('.page');
+    const animatedHeadings = document.querySelectorAll('.about-heading, .projects-heading, .contact-heading ');
+    const animatedCards = document.querySelector('.form-card');
+    const animatedLeftContent = document.querySelectorAll('.left-content');
+    const animatedRightContent = document.querySelectorAll('.right-content');
+
+    // Combine all animated elements
+    const allAnimatedElements = [
+        ...animatedSections,
+        ...animatedHeadings,
+        animatedCards,
+        ...animatedLeftContent,
+        ...animatedRightContent
+    ];
+
+    // Function to check elements and play animations
+    function checkAnimations() {
+        allAnimatedElements.forEach(element => {
+            if (isInViewport(element) && element.style.animationPlayState !== 'running') {
+                element.style.animationPlayState = 'running';
+            }
+        });
+    }
+
+    // Initial check
+    checkAnimations();
+
+    // Check on scroll
+    window.addEventListener('scroll', checkAnimations);
+});
 
 
